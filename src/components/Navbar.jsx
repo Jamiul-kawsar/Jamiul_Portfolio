@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   return (
@@ -13,25 +13,25 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-8 text-sm">
           <a
             href="#about"
-            className=" text-gray-500 hover:text-cyan-600 transition duration-300"
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             ABOUT
           </a>
           <a
             href="#skills"
-            className=" text-gray-500 hover:text-cyan-600 transition duration-300"
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             SKILLS
           </a>
           <a
             href="#projects"
-            className=" text-gray-500 hover:text-cyan-600 transition duration-300"
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             PROJECTS
           </a>
           <a
             href="#contact"
-            className=" text-gray-500 hover:text-cyan-600 transition duration-300"
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             CONTACT
           </a>
