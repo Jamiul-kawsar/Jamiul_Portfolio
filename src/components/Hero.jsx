@@ -17,7 +17,7 @@ const Hero = () => {
     useEffect(() => {
         const currentRole = roles[index];
 
-        if(charIndex < currentRole.length) {
+        if (charIndex < currentRole.length) {
             const timeout = setTimeout(() => {
                 setText((prev) => prev + currentRole[charIndex]);
                 setCharIndex((prev) => prev + 1);
@@ -52,24 +52,24 @@ const Hero = () => {
                     className="absolute w-[600px] h-[600px] bg-violet-900 top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
                 />
                 <motion.div
-                    animate={{ 
-                        x: [0, 30, -20, 0], 
-                        y: [0, -20, 30, 0], 
+                    animate={{
+                        x: [0, 30, -20, 0],
+                        y: [0, -20, 30, 0],
                     }}
-                    transition={{ 
-                        duration: 9, 
-                        repeat: Infinity 
+                    transition={{
+                        duration: 9,
+                        repeat: Infinity
                     }}
                     className="absolute w-[300px] h-[300px] bg-cyan-900 bottom-[-100px] left-[-100px] rounded-full blur-[100px] opacity-30"
                 />
                 <motion.div
-                    animate={{ 
-                        x: [0, 15, -20, 0], 
-                        y: [0, -20, 15, 0] 
+                    animate={{
+                        x: [0, 15, -20, 0],
+                        y: [0, -20, 15, 0]
                     }}
-                    transition={{ 
-                        duration: 9, 
-                        repeat: Infinity 
+                    transition={{
+                        duration: 9,
+                        repeat: Infinity
                     }}
                     className="absolute w-[300px] h-[300px] bg-emerald-600 top-[35%] left-[35%] rounded-full blur-[100px] opacity-30"
                 />
@@ -100,16 +100,16 @@ const Hero = () => {
                         I build intelligent systems combining machine learning, robotics, and modern web technologies — turning complex problems into elegant solutions.
                     </p>
                 </div>
-                <div className="flex space-x-6">
-                    <a href='/Projects' className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-cyan-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                    <a href='/Projects' className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap"id='projects'>
                         View Projects
                         <ArrowRight size={18} />
                     </a>
-                    <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg">
+                    <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
                         Download Resume
                         <Download className='inline ml-2' size={18} />
                     </a>
-                    <a href="https://github.com/Jamiul-kawsar" target="_blank" rel="noopener noreferrer" className="group border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2">
+                    <a href="https://github.com/Jamiul-kawsar" target="_blank" rel="noopener noreferrer" className="group border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
                         GitHub
                         <img src="/github.png" alt="GitHub"
                             className='w-4 h-4  rounded-full bg-white group-hover:bg-cyan-600 transition-all duration-200 ' />
