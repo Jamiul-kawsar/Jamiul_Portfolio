@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "./SectionHeader";
 
 const About = () => {
   return (
@@ -6,21 +7,12 @@ const About = () => {
 
       <div className="max-w-6xl mx-auto">
 
-        {/* Header */}
-        <div className="mb-12">
-          <p className="text-cyan-400 font-mono text-xs uppercase tracking-[0.15em] mb-2">
-            // About Me
-          </p>
-
-          <h2 className="text-4xl md:text-7xl font-extrabold">
-            Who I{" "}
-            <span className="bg-gradient-to-br from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Am
-            </span>
-          </h2>
-
-          <div className="w-15 h-[3px] bg-gradient-to-r from-cyan-400 to-purple-500 mt-4"></div>
-        </div>
+          {/* Section Header */}
+          <SectionHeader
+            label="// About Me"
+            title="Who I"
+            highlight="Am"
+          />
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center">

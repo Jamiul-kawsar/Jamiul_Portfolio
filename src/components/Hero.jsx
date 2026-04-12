@@ -101,7 +101,7 @@ const Hero = () => {
                     </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-                    <a href='/Projects' className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap"id='projects'>
+                    <a href='/projects' className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap">
                         View Projects
                         <ArrowRight size={18} />
                     </a>
@@ -114,6 +114,13 @@ const Hero = () => {
                         <img src="/github.png" alt="GitHub"
                             className='w-4 h-4  rounded-full bg-white group-hover:bg-cyan-600 transition-all duration-200 ' />
                     </a>
+                </div>
+
+                {/* Scroll down indicator */}
+                <div
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs tracking-widest uppercase animate-[bounce_2s_infinite]">
+                    Scroll
+                    <div className="w-[1px] h-12 bg-gradient-to-b from-cyan-400 to-transparent"></div>
                 </div>
             </div>
         </div>
