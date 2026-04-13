@@ -31,6 +31,13 @@ const Hero = () => {
         }, 1500);
     }, [index, charIndex]);
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="h-screen flex items-center justify-center bg-gradient-to-tr from-[#17364d] via-[#000000] to-[#2b1338] text-white">
             {/* GRID OVERLAY */}
@@ -51,6 +58,7 @@ const Hero = () => {
                     }}
                     className="absolute w-[600px] h-[600px] bg-violet-900 top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
                 />
+
                 <motion.div
                     animate={{
                         x: [0, 30, -20, 0],
@@ -62,6 +70,7 @@ const Hero = () => {
                     }}
                     className="absolute w-[300px] h-[300px] bg-cyan-900 bottom-[-100px] left-[-100px] rounded-full blur-[100px] opacity-30"
                 />
+
                 <motion.div
                     animate={{
                         x: [0, 15, -20, 0],
@@ -74,41 +83,50 @@ const Hero = () => {
                     className="absolute w-[300px] h-[300px] bg-emerald-600 top-[35%] left-[35%] rounded-full blur-[100px] opacity-30"
                 />
             </div>
+
             {/* CONTENT */}
             <div className="text-center flex flex-col items-center justify-center space-y-6 px-4">
                 <div className='text-cyan-600 flex items-center py-2 border border-cyan-600 px-4 py-2 rounded-full animate-pulse'>
+
                     {/* green dot */}
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+
                     <p className="text-sm text-cyan-600 tracking-widest">
                         open to opportunities
                     </p>
                 </div>
+
                 <div className='bg-[linear-gradient(135deg,#ffffff,cyan,#7F00FF)] bg-clip-text text-transparent animate-[gradient_5s_ease_infinite]'>
-                    <h1 className="text-5xl lg:text-8xl font-extrabold font-stretch-expanded text-center">
-                        <span className="inline lg:block">Jamiul</span>{" "}
-                        <span className="inline lg:block">Kawsar</span>
+                    <h1 className="text-7xl md:text-8xl font-extrabold font-stretch-expanded text-center">
+                        <span className="inline">Jamiul</span>{" "}
+                        <span className="inline">Kawsar</span>
                     </h1>
                 </div>
+
                 <div>
                     <p className="text-2xl text-[#00d4ff] mb-4">
                         {text}
                         <span className="animate-pulse">|</span>
                     </p>
                 </div>
+
                 <div className='max-w-xl'>
                     <p className="text-md text-gray-400 mb-8">
                         I build intelligent systems combining machine learning, robotics, and modern web technologies — turning complex problems into elegant solutions.
                     </p>
                 </div>
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-                    <a href='/projects' className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap">
+                    <button onClick={() => scrollToSection('projects')} className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap">
                         View Projects
                         <ArrowRight size={18} />
-                    </a>
+                    </button>
+
                     <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
                         Download Resume
                         <Download className='inline ml-2' size={18} />
                     </a>
+
                     <a href="https://github.com/Jamiul-kawsar" target="_blank" rel="noopener noreferrer" className="group border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
                         GitHub
                         <img src="/github.png" alt="GitHub"

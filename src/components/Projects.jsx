@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionHeader from "./SectionHeader";
+import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   return (
@@ -12,10 +13,26 @@ const Projects = () => {
           highlight="Projects"
         />
 
-        <h1 className='text-5xl font-bold mb-4'>My Projects</h1>
-        <p className='text-lg text-gray-400 mb-8'>
-          Here are some of the projects I've worked on. Each project showcases my skills in machine learning, robotics, and web development.
-        </p>
+        {/* Projects go here... */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {/* Example Project Card */}
+          <ProjectCard
+            icon="🚀"
+            title="AI-Powered Chatbot"
+            description="A chatbot that uses natural language processing to provide intelligent responses to user queries."
+            tags={["Python", "NLP", "Chatbot", "AI", "Machine Learning"]}
+            githubLink="https://github.com/yourusername/ai-chatbot"
+          />
+          <ProjectCard
+            icon="📊"
+            title="Data Visualization Dashboard"
+            description="A web-based dashboard that visualizes complex datasets using interactive charts and graphs."
+            tags={["React", "D3.js", "Data Visualization", "Web Development", "JavaScript"]}
+            githubLink="https://github.com/yourusername/data-visualization-dashboard"
+          />
+
+        </div>
+
       </div>
     </section>
   )

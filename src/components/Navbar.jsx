@@ -49,9 +49,10 @@ const Navbar = () => {
         </div>
 
         {/* Call To Action Button */}
-        <button className=" bg-gradient-to-l from-blue-500 to-violet-700 text-white py-1 px-3 rounded-md hover:from-blue-600 hover:to-violet-800 transition duration-300 ease-in-out cursor-pointer" >
+        <a  href="#contact"
+        className=" bg-gradient-to-l from-blue-500 to-violet-700 text-white py-1 px-3 rounded-md hover:from-blue-600 hover:to-violet-800 transition duration-300 ease-in-out cursor-pointer" >
           Hire Me
-        </button>
+        </a >
 
         {/* Mobile Menu Button */}
         <button
