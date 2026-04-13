@@ -10,7 +10,7 @@ const ProjectCard = ({
     return (
         <div className="group relative p-7 rounded-2xl bg-white/5 border border-white/10 cursor-pointer overflow-hidden transition-all duration-30">
 
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" >
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" >
             </div>
             <div className='flex justify-between items-start mb-4'>
                 <span className='text-3xl'>{icon}</span>

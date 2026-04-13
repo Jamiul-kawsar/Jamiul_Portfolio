@@ -14,7 +14,7 @@ const Skills = () => {
                     highlight="Stack"
                 />
 
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Programming */}
                     <SkillCard
                         icon="⚙️"
