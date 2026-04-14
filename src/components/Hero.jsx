@@ -39,7 +39,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="h-screen flex items-center justify-center bg-gradient-to-tr from-[#17364d] via-[#000000] to-[#2b1338] text-white">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#17364d] via-black to-[#2b1338] text-white px-4 py-10 md:py-0 relative overflow-hidden">
             {/* GRID OVERLAY */}
             <div className="absolute pointer-events-none inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
@@ -56,7 +56,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute w-[600px] h-[600px] bg-violet-900 top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
+                    className="absolute w-[600px] h-[600px] bg-[#7c3aed] top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
                 />
 
                 <motion.div
@@ -68,7 +68,7 @@ const Hero = () => {
                         duration: 9,
                         repeat: Infinity
                     }}
-                    className="absolute w-[300px] h-[300px] bg-cyan-900 bottom-[-100px] left-[-100px] rounded-full blur-[100px] opacity-30"
+                    className="absolute w-[300px] h-[300px] bg-[#00d4ff] bottom-[-100px] left-[-100px] rounded-full blur-[100px] opacity-30"
                 />
 
                 <motion.div
@@ -80,7 +80,7 @@ const Hero = () => {
                         duration: 9,
                         repeat: Infinity
                     }}
-                    className="absolute w-[300px] h-[300px] bg-emerald-600 top-[35%] left-[35%] rounded-full blur-[100px] opacity-30"
+                    className="absolute w-[300px] h-[300px] bg-[#10b981] top-[35%] left-[35%] rounded-full blur-[100px] opacity-30"
                 />
             </div>
 
