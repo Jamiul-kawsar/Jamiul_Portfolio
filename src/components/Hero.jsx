@@ -56,7 +56,7 @@ const Hero = () => {
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute w-[600px] h-[600px] bg-[#7c3aed] top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
+                    className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#7c3aed] top-[-200px] right-[-100px] rounded-full blur-[100px] opacity-30"
                 />
 
                 <motion.div
@@ -97,7 +97,7 @@ const Hero = () => {
                 </div>
 
                 <div className='bg-[linear-gradient(135deg,#ffffff,cyan,#7F00FF)] bg-clip-text text-transparent animate-[gradient_5s_ease_infinite]'>
-                    <h1 className="text-7xl md:text-8xl font-extrabold font-stretch-expanded text-center">
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold font-stretch-expanded text-center">
                         <span className="inline">Jamiul</span>{" "}
                         <span className="inline">Kawsar</span>
                     </h1>
@@ -116,18 +116,18 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-                    <button onClick={() => scrollToSection('projects')} className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap">
+                <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                    <button onClick={() => scrollToSection('projects')} className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-7 py-3 rounded-lg font-bold text-sm bg-[#00d4ff] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,212,255,0.3)] transition-all duration-200 whitespace-nowrap">
                         View Projects
                         <ArrowRight size={18} />
                     </button>
 
-                    <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
+                    <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="w-full sm:w-auto border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex justify-center items-center gap-2 whitespace-nowrap">
                         Download Resume
                         <Download className='inline ml-2' size={18} />
                     </a>
 
-                    <a href="https://github.com/Jamiul-kawsar" target="_blank" rel="noopener noreferrer" className="group border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex items-center gap-2 whitespace-nowrap">
+                    <a href="https://github.com/Jamiul-kawsar" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto group border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex justify-center items-center gap-2 whitespace-nowrap">
                         GitHub
                         <img src="/github.png" alt="GitHub"
                             className='w-4 h-4  rounded-full bg-white group-hover:bg-cyan-600 transition-all duration-200 ' />
@@ -136,7 +136,7 @@ const Hero = () => {
 
                 {/* Scroll down indicator */}
                 <div
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs tracking-widest uppercase animate-[bounce_2s_infinite]">
+                    className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs tracking-widest uppercase animate-[bounce_2s_infinite]">
                     Scroll
                     <div className="w-[1px] h-12 bg-gradient-to-b from-cyan-400 to-transparent"></div>
                 </div>
