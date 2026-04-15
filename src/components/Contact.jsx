@@ -1,17 +1,30 @@
-import { section } from 'motion/react-client'
 import React, { useState } from 'react'
 import SectionHeader from "./SectionHeader";
 import { ComputerIcon, Mail, Phone } from "lucide-react";
 
-const Skills = () => {
-  const [sent, setSent] = useState(false);
+const Contact = () => {
+  const [result, setResult] = useState("");
 
-  const handleSubmit = (e) => {
-    setSent(true);
-    // Simulate sending message
-    setTimeout(() => {
-      setSent(false);
-    }, 3000);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "0a04e565-823e-4468-acc5-800a8b0bb3ee");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Message Sent!");
+      event.target.reset();
+      setTimeout(() => setResult(""), 3000); // Reset after 3 seconds
+    } else {
+      setResult("Error");
+      setTimeout(() => setResult(""), 3000);
+    }
   };
 
   return (
@@ -38,8 +51,8 @@ const Skills = () => {
               </div>
 
               <div >
-                <div className="text-smsm text-gray-400 group-hover:text-gray-600 font-mono" >Email</div>
-                <div className="text-smsm text-slate-500 group-hover:text-[#00d4ff] transition-colors duration-300">
+                <div className="text-sm text-gray-400 group-hover:text-gray-600 font-mono" >Email</div>
+                <div className="text-sm text-slate-500 group-hover:text-[#00d4ff] transition-colors duration-300">
                   jamiul.kawsar35@gmail.com
                 </div>
 
@@ -84,40 +97,40 @@ const Skills = () => {
             </a>
           </div>
 
-          <div className="flex flex-col gap-5 w-full">
+          <form onSubmit={onSubmit} className="flex flex-col gap-5 w-full">
             <div className="flex flex-col gap-1.5 mb-3">
               <label htmlFor="name"
                 className="text-sm font-mono text-gray-400 uppercase tracking-wide">
                 Name
               </label>
-              <input type="text" id="name" placeholder='Your name' className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 focus:border-cyan-400 focus:ring-1 focus:ring-[#00d4ff]" />
+              <input type="text" id="name" name="name" placeholder='Your name' required className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 focus:border-cyan-400 focus:ring-1 focus:ring-[#00d4ff]" />
             </div>
 
             <div className="flex flex-col gap-1.5 mb-3">
-              <label htmlFor="name"
+              <label htmlFor="email"
                 className="text-sm font-mono text-gray-400 uppercase tracking-wide">
                 E-mail
               </label>
-              <input type="email" id="email" placeholder='your@gmail.com' className="bg-white/5 border border-white/10 text-gray-400 px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 focus:border-cyan-400 focus:ring-1 focus:ring-[#00d4ff]" />
+              <input type="email" id="email" name="email" placeholder='your@gmail.com' required className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 focus:border-cyan-400 focus:ring-1 focus:ring-[#00d4ff]" />
             </div>
 
             <div className="flex flex-col gap-1.5 mb-4">
-              <label htmlFor=""
+              <label htmlFor="message"
                 className="text-xs font-mono text-gray-500 uppercase tracking-wider">
                 Message
               </label>
 
-              <textarea name="" id=""
+              <textarea name="message" required
                 placeholder='Tell me about your project...'
                 className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 resize-y min-h-[110px] placeholder:text-gray-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30"></textarea>
             </div>
 
             <button
-              onClick={handleSubmit}
-              className={`bg-gradient-to-r from-[#7c3aed] to-[#00d4ff] ${sent ? "bg-green-500 hover:bg-green-600" : "bg-gradient-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]`}>
-              {sent ? "Message Sent!" : "Send Message"}
+              type="submit"
+              className={`${result === "Message Sent!" ? "bg-green-500 hover:bg-green-600" : "bg-gradient-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]`}>
+              {result ? result : "Send Message"}
             </button>
-          </div>
+          </form>
         </div>
 
       </div>
@@ -125,4 +138,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default Contact
