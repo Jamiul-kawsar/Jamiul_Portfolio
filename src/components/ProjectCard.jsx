@@ -62,7 +62,7 @@ const ProjectCard = ({
                         
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
                             {description}
-                        </p>
+                        </p>    
                         
                         <div className="mb-6">
                             <p className="text-xs uppercase tracking-widest text-[#00d4ff] font-mono mb-3">Tech Stack</p>
