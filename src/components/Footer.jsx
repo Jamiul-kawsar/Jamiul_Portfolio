@@ -21,7 +21,7 @@ const Footer = () => {
               JK.dev
             </h3>
             <p className="text-sm text-gray-400">
-              Full-stack developer crafting elegant solutions with modern technologies.
+              Software engineer crafting elegant solutions with modern technologies.
             </p>
           </div>
 
