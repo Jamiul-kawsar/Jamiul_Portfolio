@@ -19,13 +19,13 @@ const Skills = () => {
                     <SkillCard
                         icon="⚙️"
                         title="Programming"
-                        skills={["C", "C++", "Python", "JavaScript", "Java"]}
+                        skills={["C", "C++", "C#", "Python", "JavaScript", "Java"]}
                     />
                     {/* Machine Learning */}
                     <SkillCard
                         icon="🧠"
                         title="Machine Learning"
-                        skills={["NumPy", "Pandas", "Scikit-learn", "PyTorch", "XGBoost"]}
+                        skills={["NumPy", "Pandas","Matplotlib", "Scikit-learn", "PyTorch", "XGBoost"]}
                     />
                     {/* Web Development */}
                     <SkillCard

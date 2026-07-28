@@ -29,6 +29,12 @@ const Navbar = () => {
             ABOUT
           </a>
           <a
+            href="#experience"
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
+          >
+            EXPERIENCE
+          </a>
+          <a
             href="#skills"
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >

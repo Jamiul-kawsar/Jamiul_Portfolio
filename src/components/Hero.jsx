@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const roles = [
     "Software Engineer",
-    "ML Engineer",
+    "AI/ML Engineer",
     "Robotics Enthusiast"
 ];
 
@@ -122,7 +122,7 @@ const Hero = () => {
                         <ArrowRight size={18} />
                     </button>
 
-                    <a href="/CV_Jamiul_Kawsar_BD.pdf" download className="w-full sm:w-auto border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex justify-center items-center gap-2 whitespace-nowrap">
+                    <a href="/CV_Jamiul_Kawsar.pdf" download className="w-full sm:w-auto border border-gray-600 hover:border-cyan-600 text-white hover:text-cyan-600 font-bold py-2 px-8 rounded-lg inline-flex justify-center items-center gap-2 whitespace-nowrap">
                         Download Resume
                         <Download className='inline ml-2' size={18} />
                     </a>
