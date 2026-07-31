@@ -82,6 +82,13 @@ const Navbar = () => {
               ABOUT
             </a>
             <a
+              href="#experience"
+              onClick={handleLinkClick}
+              className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
+            >
+              EXPERIENCE
+            </a>
+            <a
               href="#skills"
               onClick={handleLinkClick}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
