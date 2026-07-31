@@ -9,6 +9,7 @@ export const experiences = [
     technologies: [
       "Python",
       "NumPy",
+      "PyVista",
       "GeoPandas",
       "Rasterio",
       "GIS",
