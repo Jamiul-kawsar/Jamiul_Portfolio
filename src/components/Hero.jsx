@@ -1,12 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { ArrowRight, Download } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const roles = [
     "Software Engineer",
-    "AI/ML Engineer",
-    "Robotics Enthusiast"
+    "AI/ML Engineer"
 ];
 
 const Hero = () => {
@@ -29,6 +28,7 @@ const Hero = () => {
             setCharIndex(0);
             setIndex((prev) => (prev + 1) % roles.length);
         }, 1500);
+        return () => clearTimeout(timeout);
     }, [index, charIndex]);
 
     const scrollToSection = (id) => {
@@ -86,7 +86,7 @@ const Hero = () => {
 
             {/* CONTENT */}
             <div className="text-center flex flex-col items-center justify-center space-y-6 px-4">
-                <div className='text-cyan-600 flex items-center py-2 border border-cyan-600 px-4 py-2 rounded-full animate-pulse'>
+                <div className='text-cyan-600 flex items-center border border-cyan-600 px-4 py-2 rounded-full animate-pulse'>
 
                     {/* green dot */}
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
@@ -96,7 +96,7 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className='bg-[linear-gradient(135deg,#ffffff,cyan,#7F00FF)] bg-clip-text text-transparent animate-[gradient_5s_ease_infinite]'>
+                <div className='bg-[linear-gradient(135deg,#ffffff,cyan,#7F00FF)] bg-[length:200%_auto] bg-clip-text text-transparent animate-[gradient_5s_ease_infinite]'>
                     <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold font-stretch-expanded text-center">
                         <span className="inline">Jamiul</span>{" "}
                         <span className="inline">Kawsar</span>
@@ -111,7 +111,7 @@ const Hero = () => {
                 </div>
 
                 <div className='max-w-xl'>
-                    <p className="text-md text-gray-400 mb-8">
+                    <p className="text-base text-gray-400 mb-8">
                         I build intelligent systems combining machine learning, robotics, and modern web technologies — turning complex problems into elegant solutions.
                     </p>
                 </div>

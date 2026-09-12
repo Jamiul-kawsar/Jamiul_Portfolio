@@ -1,8 +1,6 @@
-import { section } from 'motion/react-client'
 import React from 'react'
 import SectionHeader from "./SectionHeader";
 import SkillCard from './SkillCard';
-import { } from "lucide-react";
 
 const Skills = () => {
     return (

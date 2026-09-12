@@ -58,7 +58,7 @@ const About = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="text-gray-400 text-md space-y-6">
+          <div className="text-gray-400 text-base space-y-6">
             <div>
               <p className="mb-4">
                 I'm a Computer Science & Engineering graduate from {" "}

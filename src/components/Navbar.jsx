@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950 border-b border-gray-850 shadow-lg backdrop-blur-sm ">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950 border-b border-gray-800 shadow-lg backdrop-blur-sm ">
       <div className="font-syne text-white flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-violet-500 text-transparent bg-clip-text">

@@ -1,27 +1,5 @@
 export const experiences = [
   {
-    company: "Army War Game Centre, Bangladesh Army",
-    role: "Software Engineer",
-    duration: "June 2026 – Present",
-    location: "Mymensingh, Bangladesh",
-    description:
-      "Developing Python applications to support internal GIS workflows and geospatial data processing.",
-    technologies: [
-      "Python",
-      "NumPy",
-      "PyVista",
-      "GeoPandas",
-      "Rasterio",
-      "GIS",
-    ],
-    achievements: [
-      "Developed Python applications for internal GIS workflows. ",
-      "Processed geospatial datasets using GeoPandas and Rasterio. ",
-      "Collaborated with engineers to improve software reliability.",
-    ],
-  },
-  
-  {
     company: "Synora",
     role: "AI Engineer (Part-time)",
     duration: "August 2026 – Present",
@@ -40,6 +18,27 @@ export const experiences = [
       "Developing modular prompt template and context management components for AI services.",
       "Designing provider-independent message and response pipelines for LLM integration.",
       "Collaborating with AI engineers to build, test, and integrate scalable AI backend features.",
+    ],
+  },
+  {
+    company: "Army War Game Centre, Bangladesh Army",
+    role: "Software Engineer",
+    duration: "June 2026 – Present",
+    location: "Mymensingh, Bangladesh",
+    description:
+      "Developing Python applications to support internal GIS workflows and geospatial data processing.",
+    technologies: [
+      "Python",
+      "NumPy",
+      "PyVista",
+      "GeoPandas",
+      "Rasterio",
+      "GIS",
+    ],
+    achievements: [
+      "Developed Python applications for internal GIS workflows. ",
+      "Processed geospatial datasets using GeoPandas and Rasterio. ",
+      "Collaborated with engineers to improve software reliability.",
     ],
   },
   {
@@ -66,5 +65,5 @@ export const experiences = [
       "Built and evaluated supervised classification model using Scikit-learn, applying train/test splitting and model evaluation techniques.",
       "Explored Transformer architecture, BPE and WordPiece tokenization, Hugging Face models, and introductory LLM inference and fine-tuning workflows.",
     ],
-  }
+  },
 ];

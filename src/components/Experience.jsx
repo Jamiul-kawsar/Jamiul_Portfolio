@@ -15,9 +15,9 @@ export default function Experience() {
 
         <div className="space-y-8">
 
-          {experiences.map((job, index) => (
+          {experiences.map((job) => (
             <ExperienceCard
-              key={index}
+              key={`${job.company}-${job.role}`}
               role={job.role}
               company={job.company}
               duration={job.duration}

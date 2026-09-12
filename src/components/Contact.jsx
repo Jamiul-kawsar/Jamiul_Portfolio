@@ -1,29 +1,51 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import SectionHeader from "./SectionHeader";
 import { ComputerIcon, Mail, Phone } from "lucide-react";
 
 const Contact = () => {
   const [result, setResult] = useState("");
+  const timeoutRef = useRef(null);
+
+  const isSending = result === "Sending....";
+
+  // Clear any pending status reset when the component unmounts.
+  useEffect(() => () => clearTimeout(timeoutRef.current), []);
+
+  const scheduleReset = (delay) => {
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setResult(""), delay);
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    const form = event.target;
     setResult("Sending....");
-    const formData = new FormData(event.target);
-    formData.append("access_key", "0a04e565-823e-4468-acc5-800a8b0bb3ee");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", "0a04e565-823e-4468-acc5-800a8b0bb3ee");
 
-    const data = await response.json();
-    if (data.success) {
-      setResult("Message Sent!");
-      event.target.reset();
-      setTimeout(() => setResult(""), 3000); // Reset after 3 seconds
-    } else {
-      setResult("Error");
-      setTimeout(() => setResult(""), 3000);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+      if (data.success) {
+        setResult("Message Sent!");
+        form.reset();
+        scheduleReset(3000);
+      } else {
+        setResult(data.message || "Error");
+        scheduleReset(4000);
+      }
+    } catch {
+      setResult("Something went wrong. Please try again.");
+      scheduleReset(5000);
     }
   };
 
@@ -127,7 +149,9 @@ const Contact = () => {
 
             <button
               type="submit"
-              className={`${result === "Message Sent!" ? "bg-green-500 hover:bg-green-600" : "bg-gradient-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]`}>
+              disabled={isSending}
+              aria-live="polite"
+              className={`${result === "Message Sent!" ? "bg-green-500 hover:bg-green-600" : "bg-gradient-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold transition-all duration-200 ${isSending ? "opacity-70 cursor-wait" : "cursor-pointer hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]"}`}>
               {result ? result : "Send Message"}
             </button>
           </form>

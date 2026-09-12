@@ -17,6 +17,7 @@ export const projectsData = [
       "A full-stack employee management system designed to handle employee records, roles, and data efficiently. Built with React and MySQL, the system demonstrates CRUD operations, structured data handling, and component-based architecture, making it suitable for real-world organizational use.",
     tags: ["React","Vite", "Tailwind CSS", "MySQL", "CRUD", "Management System"],
     githubLink: "https://github.com/Jamiul-kawsar/EmployeeMS",
+    liveLink: "",
   },
   {
     id: 3,
@@ -26,6 +27,7 @@ export const projectsData = [
       "A frontend clone of a popular news portal, focusing on layout replication, responsive design, and content structuring. The project showcases strong UI development skills using modern CSS techniques and component-based architecture to mimic a real-world media platform.",
     tags: ["React", "Frontend", "Tailwind CSS", "Responsive Design"],
     githubLink: "https://github.com/Jamiul-kawsar/ProthomAlo",
+    liveLink: "https://news-portal-jamiul.vercel.app/",
   },
   {
     id: 4,
@@ -45,6 +47,7 @@ export const projectsData = [
       "A recommendation system that suggests movies based on user preferences using collaborative filtering techniques. The project highlights understanding of similarity metrics, user-item interaction, and recommendation logic used in real-world platforms like Netflix.",
     tags: ["Python", "Machine Learning", "Collaborative Filtering", "Recommender System"],
     githubLink: "https://github.com/Jamiul-kawsar/Movie-Recommendation",
+    liveLink: "https://recommend-system-jamiul.streamlit.app/",
   },
   {
     id: 6,
@@ -54,6 +57,7 @@ export const projectsData = [
       "An advanced snake game where two agents compete using AI-based pathfinding. Implemented using A* algorithm and OOP principles in Pygame, this project demonstrates problem-solving, game logic, and intelligent agent behavior in a dynamic environment.",
     tags: ["Python", "A*", "OOP", "Pygame", "AI"],
     githubLink: "https://github.com/Jamiul-kawsar/Snake-Game",
+    liveLink: "",
   },
   {
     id: 7,
@@ -63,6 +67,7 @@ export const projectsData = [
       "A classic Tic-Tac-Toe game enhanced with AI using the Minimax algorithm. Built with Python and Tkinter, the game ensures optimal decision-making, showcasing understanding of game theory, recursion, and algorithmic thinking.",
     tags: ["Python", "Minimax", "AI", "Tkinter", "Game Development"],
     githubLink: "https://github.com/Jamiul-kawsar/Tic-Tac-Toe-Game",
+    liveLink: "",
   },
   {
     id: 8,
@@ -72,5 +77,6 @@ export const projectsData = [
       "A console-based tourism management system developed using C/C++ and OOP principles. The system manages travel data, bookings, and user interactions through structured programming and modular design, focusing on logic building and software engineering fundamentals.",
     tags: ["C++", "OOP", "Console App", "Software Engineering"],
     githubLink: "https://github.com/Jamiul-kawsar/Tourism_management",
+    liveLink: "",
   },
 ];

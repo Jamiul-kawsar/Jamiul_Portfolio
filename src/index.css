@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+    --font-syne: "Syne", sans-serif;
+}
+
+@keyframes gradient {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+/* Keep anchored section headings clear of the fixed navbar. */
+section[id] {
+    scroll-margin-top: 4.5rem;
 }

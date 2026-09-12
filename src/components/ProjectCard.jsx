@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { X } from "lucide-react";
 
 const ProjectCard = ({
@@ -7,11 +7,30 @@ const ProjectCard = ({
     description,
     tags = [],
     githubLink,
+    liveLink,
 }) => {
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        if (!open) return;
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") setOpen(false);
+        };
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [open]);
+
     return (
         <>
-            <div className="group relative p-7 rounded-2xl bg-white/5 border border-white/10 cursor-pointer overflow-hidden transition-all duration-30">
+            <div className="group relative p-7 rounded-2xl bg-white/5 border border-white/10 cursor-pointer overflow-hidden transition-all duration-300">
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className='flex justify-between items-start mb-4'>
@@ -22,6 +41,15 @@ const ProjectCard = ({
                         >
                             ⭐ GitHub
                         </a>
+                        {liveLink && (
+                            <a href={liveLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 bg-white/5 border border-white/10 hover:border-[#00d4ff] text-slate-500 px-4 py-2 rounded-md text-xs font-mono cursor-pointer transition-all duration-200 no-underline"
+                            >
+                                🚀 Live
+                            </a>
+                        )}
                     </div>
                 </div>
 
@@ -46,13 +74,23 @@ const ProjectCard = ({
             </div>
 
             {open && (
-                <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-8">
-                    <div className="bg-gray-900 border border-white/10 rounded-lg max-w-lg w-full relative p-6">
+                <div
+                    onClick={() => setOpen(false)}
+                    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 sm:p-8"
+                >
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label={title}
+                        onClick={(event) => event.stopPropagation()}
+                        className="bg-gray-900 border border-white/10 rounded-lg max-w-lg w-full relative p-6 max-h-[85vh] overflow-y-auto"
+                    >
                         <button
                             onClick={() => setOpen(false)}
+                            aria-label="Close details"
                             className="absolute top-4 right-4 border bg-gray-800 rounded text-slate-500 hover:text-white transition-colors text-xl"
                         >
-                          < X className='p-1'/>
+                          <X className='p-1'/>
                         </button>
                         
                         <div className="flex flex-col items-start mb-6">
@@ -73,14 +111,26 @@ const ProjectCard = ({
                             </div>
                         </div>
                         
-                        <a 
-                            href={githubLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-block border border-white/10 hover:border-[#00d4ff] hover:border-[#00d4ff] hover:text-[#00d4ff] p-2 rounded-md text-sm font-mono transition-colors duration-200"
-                        >
-                            View on GitHub →
-                        </a>
+                        <div className="flex flex-wrap gap-3">
+                            <a 
+                                href={githubLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-block border border-white/10 hover:border-[#00d4ff] hover:text-[#00d4ff] p-2 rounded-md text-sm font-mono transition-colors duration-200"
+                            >
+                                View on GitHub →
+                            </a>
+                            {liveLink && (
+                                <a 
+                                    href={liveLink}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-block border border-white/10 hover:border-[#00d4ff] hover:text-[#00d4ff] p-2 rounded-md text-sm font-mono transition-colors duration-200"
+                                >
+                                    View Live Demo →
+                                </a>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}

@@ -62,14 +62,9 @@ const Footer = () => {
           <p>
             &copy; {currentYear} Jamiul Kawsar. All rights reserved.
           </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gray-300 transition duration-300">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gray-300 transition duration-300">
-              Terms of Service
-            </a>
-          </div>
+          <p className="mt-4 md:mt-0">
+            Built with React, Vite &amp; Tailwind CSS.
+          </p>
         </div>
       </div>
     </footer>
