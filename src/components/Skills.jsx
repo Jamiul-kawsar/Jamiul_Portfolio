@@ -17,13 +17,19 @@ const Skills = () => {
                     <SkillCard
                         icon="⚙️"
                         title="Programming"
-                        skills={["C", "C++", "C#", "Python", "JavaScript", "Java"]}
+                        skills={["Python", "C/C++", "JavaScript", "Java", "C#"]}
                     />
                     {/* Machine Learning */}
                     <SkillCard
                         icon="🧠"
                         title="Machine Learning"
-                        skills={["NumPy", "Pandas","Matplotlib", "Scikit-learn", "PyTorch", "XGBoost"]}
+                        skills={["NumPy", "Pandas","Matplotlib", "Scikit-learn",  "XGBoost"]}
+                    />
+                    {/* Deep Learning */}
+                    <SkillCard
+                        icon="🧠"
+                        title="Deep Learning"
+                        skills={["PyTorch", "TensorFlow (Basic)", "CNN", "ResNet50", "DenseNet121","EfficientNet-B0","Transfer Learning"]}
                     />
                     {/* Web Development */}
                     <SkillCard

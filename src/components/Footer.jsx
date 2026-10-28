@@ -1,14 +1,32 @@
 import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const quickLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ]
+
+  // Smooth-scroll to a home-page section, navigating home first if needed.
+  const scrollToSection = (id) => {
+    if (location.pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+    } else {
+      navigate("/")
+      setTimeout(
+        () => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }),
+        100
+      )
+    }
+  }
 
   return (
     <footer className="bg-gray-950 border-t border-gray-800 text-gray-300 mt-20">
@@ -33,6 +51,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    onClick={(e) => { e.preventDefault(); scrollToSection(link.href.slice(1)) }}
                     className="text-gray-400 hover:text-cyan-500 transition duration-300 text-sm"
                   >
                     → {link.name}
@@ -50,6 +69,7 @@ const Footer = () => {
             </p>
             <a
               href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollToSection('contact') }}
               className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-violet-500 text-white text-sm font-semibold rounded hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300"
             >
               Get In Touch
@@ -63,7 +83,7 @@ const Footer = () => {
             &copy; {currentYear} Jamiul Kawsar. All rights reserved.
           </p>
           <p className="mt-4 md:mt-0">
-            Built with React, Vite &amp; Tailwind CSS.
+            Built with React, JavaScript, Vite &amp; Tailwind CSS.
           </p>
         </div>
       </div>

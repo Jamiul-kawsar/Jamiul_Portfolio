@@ -1,29 +1,8 @@
 export const experiences = [
   {
-    company: "Synora",
-    role: "AI Engineer (Part-time)",
-    duration: "August 2026 – Present",
-    location: "Remote",
-    description:
-      "Developing AI backend components for LLM-powered applications, focusing on prompt management, context handling, and response processing.",
-    technologies: [
-      "Python",
-      "FastAPI",
-      "LLMs",
-      "Prompt Engineering",
-      "AI APIs",
-      "Git",
-    ],
-    achievements: [
-      "Developing modular prompt template and context management components for AI services.",
-      "Designing provider-independent message and response pipelines for LLM integration.",
-      "Collaborating with AI engineers to build, test, and integrate scalable AI backend features.",
-    ],
-  },
-  {
     company: "Army War Game Centre, Bangladesh Army",
     role: "Software Engineer",
-    duration: "June 2026 – Present",
+    duration: "June 2026 – August 2026",
     location: "Mymensingh, Bangladesh",
     description:
       "Developing Python applications to support internal GIS workflows and geospatial data processing.",
@@ -45,7 +24,7 @@ export const experiences = [
     company: "Softsasi",
     role: "Machine Learning Intern",
     duration: "May 2026 – August 2026",
-    location: "Remote",
+    location: "Mymensingh, Bangladesh",
     description:
       "Developed foundational machine learning skills through practical work in Python, data analysis, supervised learning, and introductory LLM technologies.",
     technologies: [

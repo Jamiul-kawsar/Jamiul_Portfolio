@@ -11,13 +11,13 @@ const SectionHeader = ({ label, title, highlight }) => {
       {/* Title */}
       <h2 className="text-4xl md:text-7xl font-extrabold">
         {title}{" "}
-        <span className="bg-gradient-to-br from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-br from-cyan-400 to-purple-500 bg-clip-text text-transparent">
           {highlight}
         </span>
       </h2>
 
       {/* Underline */}
-      <div className="w-16 h-[3px] bg-gradient-to-r from-cyan-400 to-purple-500 mt-4"></div>
+      <div className="w-16 h-0.75 bg-linear-to-r from-cyan-400 to-purple-500 mt-4"></div>
     </div>
   );
 };

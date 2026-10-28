@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -10,6 +13,19 @@ const Navbar = () => {
 
   const handleLinkClick = () => {
     setIsOpen(false);
+  };
+
+  // Smooth-scroll to a home-page section, navigating home first if needed.
+  const scrollToSection = (id) => {
+    if (location.pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(
+        () => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }),
+        100
+      );
+    }
   };
 
   return (
@@ -24,30 +40,42 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8 text-sm">
           <a
             href="#about"
+            onClick={(e) => { e.preventDefault(); scrollToSection("about"); }}
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             ABOUT
           </a>
           <a
             href="#experience"
+            onClick={(e) => { e.preventDefault(); scrollToSection("experience"); }}
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             EXPERIENCE
           </a>
           <a
             href="#skills"
+            onClick={(e) => { e.preventDefault(); scrollToSection("skills"); }}
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             SKILLS
           </a>
           <a
             href="#projects"
+            onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }}
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             PROJECTS
           </a>
           <a
+            href="#blog"
+            onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }}
+            className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
+          >
+            BLOG
+          </a>
+          <a
             href="#contact"
+            onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}
             className=" text-gray-500 hover:text-[#00d4ff] transition duration-300"
           >
             CONTACT
@@ -56,6 +84,7 @@ const Navbar = () => {
 
         {/* Call To Action Button */}
         <a  href="#contact"
+        onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}
         className=" bg-gradient-to-l from-blue-500 to-violet-700 text-white py-1 px-3 rounded-md hover:from-blue-600 hover:to-violet-800 transition duration-300 ease-in-out cursor-pointer" >
           Hire Me
         </a >
@@ -76,35 +105,42 @@ const Navbar = () => {
           <div className="px-6 py-4 space-y-3">
             <a
               href="#about"
-              onClick={handleLinkClick}
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("about"); }}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
             >
               ABOUT
             </a>
             <a
               href="#experience"
-              onClick={handleLinkClick}
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("experience"); }}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
             >
               EXPERIENCE
             </a>
             <a
               href="#skills"
-              onClick={handleLinkClick}
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("skills"); }}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
             >
               SKILLS
             </a>
             <a
               href="#projects"
-              onClick={handleLinkClick}
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("projects"); }}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
             >
               PROJECTS
             </a>
             <a
+              href="#blog"
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("blog"); }}
+              className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
+            >
+              BLOG
+            </a>
+            <a
               href="#contact"
-              onClick={handleLinkClick}
+              onClick={(e) => { e.preventDefault(); handleLinkClick(); scrollToSection("contact"); }}
               className="block px-4 py-2 text-gray-600 hover:text-[#00d4ff] hover:bg-white/5 rounded-md transition duration-300"
             >
               CONTACT

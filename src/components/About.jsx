@@ -61,16 +61,23 @@ const About = () => {
           <div className="text-gray-400 text-base space-y-6">
             <div>
               <p className="mb-4">
-                I'm a Computer Science & Engineering graduate from {" "}
-                <strong className="text-white">Sonargaon University</strong>{" "} with a stellar CGPA of 3.93, passionate about building systems that sit at the intersection of intelligence and hardware.
+                I am a Computer Science and Engineering graduate from Sonargaon University, Bangladesh, with a{" "} <strong className="text-white">CGPA of 3.93/4.00</strong> {" "} and recipient of the {" "} <strong className="text-white"> Vice-Chancellor Gold Medal</strong>.
               </p>
 
               <p className="mb-4">
-                My journey spans machine learning model development, embedded robotics with Arduino and ATmega328P microcontrollers, and modern full-stack web development. My undergraduate thesis focused on designing and building a {" "} <strong className="text-white">Robot Car based on ATmega328P</strong>{" "}  — a hands-on blend of firmware engineering and sensor fusion.
+                My primary interests lie in {" "} <strong className="text-white">Artificial Intelligence, Machine Learning, Deep Learning, and Computer Vision</strong> {" "}. I enjoy transforming ideas into practical solutions through data-driven experimentation, model development, and software engineering. My experience includes building machine learning pipelines, developing deep learning models for medical image classification, and creating web applications using modern technologies.
               </p>
 
               <p className="mb-4">
-                I thrive on tackling complex problems — whether it's training an XGBoost model to predict caloric burn, crafting a pathfinding AI for a Snake game, or building a responsive real estate platform from scratch.
+                I have worked on projects involving {" "} <strong className="text-white">PyTorch, CNNs, ResNet50 transfer learning, XGBoost, recommendation systems, and AI-powered applications</strong>. I also have professional experience in software development and machine learning, where I have worked with data preprocessing, exploratory data analysis, geospatial data processing, and application development.
+              </p>
+
+              <p className="mb-4">
+                Beyond AI and machine learning, I enjoy building responsive web applications and exploring the intersection of intelligent systems and real-world problem-solving.
+              </p>
+
+              <p className="mb-4">
+                I am continuously improving my technical and research skills, with the goal of developing reliable, practical, and impactful AI solutions.
               </p>
             </div>
 

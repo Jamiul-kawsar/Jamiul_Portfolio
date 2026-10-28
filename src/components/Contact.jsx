@@ -142,16 +142,16 @@ const Contact = () => {
                 Message
               </label>
 
-              <textarea name="message" required
+              <textarea id="message" name="message" required
                 placeholder='Tell me about your project...'
-                className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 resize-y min-h-[110px] placeholder:text-gray-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30"></textarea>
+                className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200 resize-y min-h-27.5 placeholder:text-gray-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30"></textarea>
             </div>
 
             <button
               type="submit"
               disabled={isSending}
               aria-live="polite"
-              className={`${result === "Message Sent!" ? "bg-green-500 hover:bg-green-600" : "bg-gradient-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold transition-all duration-200 ${isSending ? "opacity-70 cursor-wait" : "cursor-pointer hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]"}`}>
+              className={`${result === "Message Sent!" ? "bg-green-500 hover:bg-green-600" : "bg-linear-to-r from-[#7c3aed] to-[#00d4ff]"} text-white py-3 rounded-lg text-sm font-bold transition-all duration-200 ${isSending ? "opacity-70 cursor-wait" : "cursor-pointer hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(79,70,229,0.4)]"}`}>
               {result ? result : "Send Message"}
             </button>
           </form>

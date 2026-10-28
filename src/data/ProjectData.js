@@ -1,6 +1,16 @@
 export const projectsData = [
   {
     id: 1,
+    icon: "🩻",
+    title: "Multi-Class Chest X-Ray Classification",
+    description:
+      "Designed and developed a reproducible deep-learning research pipeline using PyTorch to classify chest X-ray images into three categories: Normal, COVID-19, and Pneumonia, using an audited dataset of 9,208 images. The study compares a custom CNN baseline with pretrained ResNet50, DenseNet121, and EfficientNet-B0 architectures to investigate the effectiveness of different deep-learning approaches for medical image classification. Implemented transfer-learning experiments using frozen pretrained feature extractors and fine-tuned models to compare their performance. The pipeline includes data auditing, controlled data splitting, preprocessing, model training, and comprehensive evaluation using precision, recall, F1-score, confusion matrices, and multiclass ROC-AUC. The fine-tuned ResNet50 achieved a 0.998 macro-average ROC-AUC on the validation set. The ongoing research further investigates data augmentation, class weighting, Grad-CAM-based explainability, error analysis, and external validation to better understand model generalization, prediction behavior, and robustness.",
+    tags: ["Python", "PyTorch", "CNNs", "ResNet50", "DenseNet121", "EfficientNet-B0", "Transfer Learning", "Fine-Tuning", "Scikit-learn", "NumPy", "Pandas", "Matplotlib", "Medical Image Analysis"],
+    githubLink: "https://github.com/Jamiul-kawsar/covid_chest_x-ray_curated_dataset",
+    liveLink: "",
+  },
+  {
+    id: 2,
     icon: "🏠",
     title: "Real Estate Web Application",
     description:
@@ -10,7 +20,7 @@ export const projectsData = [
     liveLink: "https://real-estate-jamiul.netlify.app/",
   },
   {
-    id: 2,
+    id: 3,
     icon: "👨‍💼",
     title: "Employee Management System",
     description:
@@ -20,17 +30,17 @@ export const projectsData = [
     liveLink: "",
   },
   {
-    id: 3,
+    id: 4,
     icon: "📰",
-    title: "Prothom Alo News Portal Clone",
+    title: "News Portal (Frontend Only)",
     description:
       "A frontend clone of a popular news portal, focusing on layout replication, responsive design, and content structuring. The project showcases strong UI development skills using modern CSS techniques and component-based architecture to mimic a real-world media platform.",
     tags: ["React", "Frontend", "Tailwind CSS", "Responsive Design"],
     githubLink: "https://github.com/Jamiul-kawsar/ProthomAlo",
-    liveLink: "https://news-portal-jamiul.vercel.app/",
+    liveLink: "https://prothom-alo-two.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     icon: "🔥",
     title: "Calories Burnt Prediction System",
     description:
@@ -40,7 +50,7 @@ export const projectsData = [
     liveLink: "https://jamiul-kawsar-calories-burnt-predictor.streamlit.app/",
   },
   {
-    id: 5,
+    id: 6,
     icon: "🎬",
     title: "Movie Recommendation System",
     description:
@@ -50,7 +60,7 @@ export const projectsData = [
     liveLink: "https://recommend-system-jamiul.streamlit.app/",
   },
   {
-    id: 6,
+    id: 7,
     icon: "🐍",
     title: "Two-Agent Snake Game (AI-Based)",
     description:
@@ -60,7 +70,7 @@ export const projectsData = [
     liveLink: "",
   },
   {
-    id: 7,
+    id: 8,
     icon: "❌⭕",
     title: "Tic-Tac-Toe AI Game",
     description:
@@ -70,7 +80,7 @@ export const projectsData = [
     liveLink: "",
   },
   {
-    id: 8,
+    id: 9,
     icon: "🌍",
     title: "Tourism Management System",
     description:
